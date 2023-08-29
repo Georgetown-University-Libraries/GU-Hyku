@@ -1,0 +1,3 @@
+[submodule "hyku"]
+	path = hyku
+	url = https://github.com/samvera/hyku.git
