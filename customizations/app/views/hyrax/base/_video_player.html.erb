@@ -1,0 +1,13 @@
+<div class="viewer-wrapper">
+  <video id="video" controls preload="metadata">
+    <source src=<%= hyrax.download_path(presenter.video_file_set_presenter) %>
+            type=<%= presenter.video_file_set_presenter.mime_type %>>
+    <% presenter.vtt_file_set_presenters.map do |vtt_file_set_presenter| %>
+      <track
+        label="<%= vtt_file_set_presenter.language.first || "Captions" %>"
+        kind="subtitles"
+        srclang="<%= vtt_file_set_presenter.language_code || "und" %>"
+        src="<%= hyrax.download_path(vtt_file_set_presenter.id) %>">
+    <% end %>
+  </video>
+</div>
