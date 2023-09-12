@@ -807,7 +807,7 @@ en:
           office_link: Download file
           pdf_link: Download PDF
           video_link: Download video
-          pdf_new_tab: "View PDF in Browser"
+          pdf_new_tab: "View PDF (opens new window)"
           pdf_download: "Download PDF"
     file_sets:
       actions:
