@@ -367,6 +367,7 @@ en:
         actions: Actions
         date_uploaded: Date Uploaded
         empty: This %{type} has no files associated with it. Click "edit" to add more files.
+        file_size: File Size
         header: Items
         thumbnail: Thumbnail
         title: Title
