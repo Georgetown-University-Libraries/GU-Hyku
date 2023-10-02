@@ -10,10 +10,6 @@ x-app: &app
   image: ghcr.io/samvera/hyku:${TAG:-latest}
   env_file:
     - .env
-  environment:
-    - HYKU_ADMIN_HOST=lvh.me
-    - HYKU_DEFAULT_HOST=%{tenant}.lvh.me
-    - HYKU_ROOT_HOST=lvh.me
   # NOTE: all common env variables moved to .env
   volumes:
     - node_modules:/app/samvera/hyrax-webapp/node_modules:cached
@@ -60,7 +56,7 @@ services:
       timeout: "8s"
 
   solr:
-    image: ghcr.io/samvera/hyku/solr:${TAG:-latest}
+    image: hyku/solr:8
     build:
       context: solr
       dockerfile: Dockerfile
@@ -73,8 +69,8 @@ services:
       - SOLR_ENABLE_CLOUD_MODE=yes
       - SOLR_ENABLE_AUTHENTICATION=yes
       - ZK_HOST=zoo:2181
-      # - VIRTUAL_PORT=8983
-      # - VIRTUAL_HOST=solr.hyku.test
+      - VIRTUAL_PORT=8983
+      - VIRTUAL_HOST=solr.hyku.test
     user: root
     command: bash -c "
       chown -R 8983:8983 /var/solr
@@ -95,8 +91,6 @@ services:
     depends_on:
       zoo:
         condition: service_healthy
-    ports:
-      - "8983:8983"
 
   fcrepo:
     image: ghcr.io/samvera/fcrepo4:4.7.5
@@ -105,15 +99,13 @@ services:
     env_file:
       - .env
     environment:
-      # - VIRTUAL_PORT=8080
-      # - VIRTUAL_HOST=fcrepo.hyku.test
+      - VIRTUAL_PORT=8080
+      - VIRTUAL_HOST=fcrepo.hyku.test
       - JAVA_OPTS=${JAVA_OPTS} -Dfcrepo.modeshape.configuration="classpath:/config/file-simple/repository.json" -Dfcrepo.object.directory="/data/objects" -Dfcrepo.binary.directory="/data/binaries"
     expose:
       - 8080
     networks:
       internal:
-    ports:
-      - "8080:8080"
 
   db:
     image: postgres:11.1
@@ -123,14 +115,12 @@ services:
       - POSTGRES_DB=${DB_NAME}
       - POSTGRES_PASSWORD=${DB_PASSWORD}
       - POSTGRES_USER=${DB_USER}
-      # - VIRTUAL_PORT=5432
-      # - VIRTUAL_HOST=db.hyku.test
+      - VIRTUAL_PORT=5432
+      - VIRTUAL_HOST=db.hyku.test
     volumes:
       - db:/var/lib/postgresql/data
     networks:
       internal:
-    ports:
-      - "5432:5432"
 
   # Used exclusively for building and caching the base image to reduce build times
   base:
@@ -142,9 +132,9 @@ services:
 
   web:
     <<: *app
-    # environment:
-    #   - VIRTUAL_PORT=3000
-    #   - VIRTUAL_HOST=.hyku.test
+    environment:
+      - VIRTUAL_PORT=3000
+      - VIRTUAL_HOST=.hyku.test
     depends_on:
       db:
         condition: service_started
@@ -164,10 +154,9 @@ services:
         condition: service_started
       initialize_app:
         condition: service_completed_successfully
-    ports:
-      - "3000:3000"
     expose:
       - 3000
+    platform: linux/amd64
 
   worker:
     <<: *app
@@ -194,6 +183,7 @@ services:
         condition: service_started
       zoo:
         condition: service_started
+    platform: linux/amd64
 
   # Do not recurse through all of tmp. derivitives will make booting
   # very slow and eventually just time out as data grows
@@ -206,6 +196,7 @@ services:
         chown -R app:app /app/samvera/hyrax-webapp/public/uploads &&
         chown -R app:app /app/samvera/hyrax-webapp/public/assets &&
         chown -R app:app /app/samvera/hyrax-webapp/tmp/cache
+    platform: linux/amd64
 
   initialize_app:
     <<: *app
@@ -227,6 +218,7 @@ services:
         condition: service_started
       redis:
         condition: service_started
+    platform: linux/amd64
 
   redis:
     image: redis:5
@@ -248,5 +240,5 @@ services:
       internal:
     environment:
       - JAVA_OPTS=-Dwebdriver.chrome.whitelistedIps=
-      # - VIRTUAL_PORT=7900
-      # - VIRTUAL_HOST=chrome.hyku.test
+      - VIRTUAL_PORT=7900
+      - VIRTUAL_HOST=chrome.hyku.test
