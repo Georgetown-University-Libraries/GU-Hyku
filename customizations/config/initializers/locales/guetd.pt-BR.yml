@@ -1,0 +1,8 @@
+pt-BR:
+  hyrax:
+    icons:
+      guetd:     'fa fa-file-text-o'
+    select_type:
+      guetd:
+        description:        "Guetd obras"
+        name:               "Guetd"

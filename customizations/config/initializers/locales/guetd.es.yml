@@ -1,0 +1,10 @@
+es:
+  hyrax:
+    icons:
+      guetd:     'fa fa-file-text-o'
+    select_type:
+      guetd:
+        # TODO: translate `human_name` into Spanish
+        description:        "Guetd trabajos"
+        name:               "Guetd"
+        # TODO: translate `human_name` into Spanish
