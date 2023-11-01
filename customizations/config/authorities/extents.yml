@@ -1,0 +1,15 @@
+terms:
+  - id: folders
+    term: folders
+  - id: gigabytes
+    term: gigabytes
+  - id: leaves
+    term: leaves
+  - id: megabytes
+    term: megabytes
+  - id: minutes
+    term: minutes
+  - id: pages
+    term: pages
+  - id: volumes
+    term: volumes
