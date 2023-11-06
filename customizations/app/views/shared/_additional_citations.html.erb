@@ -1,0 +1,13 @@
+<% content_for(:gscholar_meta) do %>
+  <%# The following code is not executed because it resulted in NoMethod errors %>
+  <% if false %>
+    <% unless @presenter.doi.blank? %>
+      <meta name="citation_doi" content="<%= @presenter.doi %>"/>
+    <% end %>
+    <% unless @presenter.isbns.blank? %>
+      <% @presenter.isbns.each do |isbn| %>
+        <meta name="citation_isbn" content="<%= isbn %>"/>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>
