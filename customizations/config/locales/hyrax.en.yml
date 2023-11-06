@@ -367,6 +367,7 @@ en:
         actions: Actions
         date_uploaded: Date Uploaded
         empty: This %{type} has no files associated with it. Click "edit" to add more files.
+        file_size: File Size
         header: Items
         thumbnail: Thumbnail
         title: Title
@@ -805,7 +806,9 @@ en:
           heading: Downloadable Content
           image_link: Download image
           office_link: Download file
+          pdf_download: "Download PDF"
           pdf_link: Download PDF
+          pdf_new_tab: "View PDF (opens new window)"
           video_link: Download video
     file_sets:
       actions:
