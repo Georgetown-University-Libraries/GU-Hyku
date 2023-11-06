@@ -7,30 +7,36 @@ module Hyrax
     self.required_fields = [
       :title,
       :creator,
+      :abstract,
       :advisor,
       :date_created,
-      :identifier,
-      :abstract,
-      :subject,
-      :rights_statement,
-      :resource_type,
-      :format,
-      :extent,
+      :department,
+      :description,
       :language,
+      :resource_type,
+      :rights_statement
     ]
     self.terms = self.required_fields + [
-      :keyword,
-      :issued,
-      :description,
-      :embargo_terms,
-      :embargo_lift_date,
+      :contributor,
+      :coverage, 
       :date_available,
+      :date_copyrighted,
+      :date_issued,
+      :doi,
+      :embargo_date,
+      :embargo_lift_date,
+      :embargo_terms,
+      :extent,
+      :format,
+      :identifier,
+      :keyword,
       :license,
-      :editor, 
-      :relation,
+      :orcid,
       :publisher,
+      :relation,
       :rights_notes,
-      :rights_holder
+      :subject,
+      :table_of_contents
     ]
   end
 end

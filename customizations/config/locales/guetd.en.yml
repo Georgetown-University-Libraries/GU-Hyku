@@ -4,5 +4,5 @@ en:
       guetd:     'fa fa-file-text-o'
     select_type:
       guetd:
-        description:        "Single, multi-page, and multi-file works that are a Thesis, Dissertation, or other Cumulative Academic project."
+        description:        "Select this is you are submitting thesis or dissertation work."
         name:               "GU ETD"
