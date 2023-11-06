@@ -1,0 +1,10 @@
+<div class="base-terms">
+    <% f.object.primary_terms.each do |term| %>
+    <%= render_edit_field_partial(term, f: f) %>
+    <% end %>
+</div>
+<% if f.object.display_additional_fields? %>
+    <% f.object.secondary_terms.each do |term| %>
+        <%= render_edit_field_partial(term, f: f) %>
+    <% end %>
+<% end %>
