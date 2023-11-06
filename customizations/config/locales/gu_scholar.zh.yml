@@ -1,0 +1,10 @@
+zh:
+  hyrax:
+    icons:
+      gu_scholar:     'fa fa-file-text-o'
+    select_type:
+      gu_scholar:
+        # TODO: translate `human_name` into Chinese
+        description:        "Gu scholar 作品"
+        name:               "Gu Scholar"
+        # TODO: translate `human_name` into Chinese

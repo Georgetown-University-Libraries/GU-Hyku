@@ -1,0 +1,8 @@
+en:
+  hyrax:
+    icons:
+      gu_work:     'fa fa-file-text-o'
+    select_type:
+      gu_work:
+        description:        "Select this if you are submitting archival, special collection, or special project work."
+        name:               "GU Work"

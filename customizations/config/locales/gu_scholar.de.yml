@@ -1,0 +1,8 @@
+de:
+  hyrax:
+    icons:
+      gu_scholar:     'fa fa-file-text-o'
+    select_type:
+      gu_scholar:
+        description:        "Gu scholar Werke"
+        name:               "Gu Scholar"

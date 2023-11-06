@@ -1,0 +1,10 @@
+es:
+  hyrax:
+    icons:
+      gu_scholar:     'fa fa-file-text-o'
+    select_type:
+      gu_scholar:
+        # TODO: translate `human_name` into Spanish
+        description:        "Gu scholar trabajos"
+        name:               "Gu Scholar"
+        # TODO: translate `human_name` into Spanish

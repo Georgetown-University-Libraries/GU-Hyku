@@ -1,0 +1,8 @@
+fr:
+  hyrax:
+    icons:
+      gu_work:     'fa fa-file-text-o'
+    select_type:
+      gu_work:
+        description:        "Gu work œuvres"
+        name:               "Gu Work"
