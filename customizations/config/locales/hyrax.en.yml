@@ -367,7 +367,6 @@ en:
         actions: Actions
         date_uploaded: Date Uploaded
         empty: This %{type} has no files associated with it. Click "edit" to add more files.
-        file_size: File Size
         header: Items
         thumbnail: Thumbnail
         title: Title
@@ -808,8 +807,6 @@ en:
           office_link: Download file
           pdf_link: Download PDF
           video_link: Download video
-          pdf_new_tab: "View PDF (opens new window)"
-          pdf_download: "Download PDF"
     file_sets:
       actions:
         delete: Delete
@@ -1164,18 +1161,33 @@ en:
         title: Type name
       defaults:
         admin_set_id: Administrative Set
+        archivesspace_id: ArchivesSpace ID
         based_near: Location
+        bibliographic_citation: Bibliographic Citation
         creator: Creator
+        date_available: Date Available
         date_created: Date Created
+        date_copyrighted: Date Copyrighted
+        date_issued: Date Issued
         description: Description
+        embargo_date: Embargo Date
+        embargo_lift_date: Embargo Lift Date
+        embargo_terms: Embargo Terms
         embargo_release_date: until
         files: Upload a file
+        is_part_of: Is Part Of
+        is_part_of_series: Is Part Of Series
+        issn: ISSN
         keyword: Keyword
         lease_expiration_date: until
         license: License
         member_of_collection_ids: Add to collection
+        orcid: ORCID
         related_url: Related URL
-        rights_statement: Rights statement
+        resource_type: Resource Type
+        rights_statement: Rights Statement
+        rights_notes: Rights Note
+        table_of_contents: Table of Contents
         title: Title
         visibility_after_embargo: then open it up to
         visibility_after_lease: then restrict it to
