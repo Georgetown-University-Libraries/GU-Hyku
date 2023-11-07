@@ -1,6 +1,6 @@
 # Generated via
 #  `rails generate hyrax:work GuScholar`
 module Hyrax
-  class GuScholarPresenter < Hyrax::WorkShowPresenter
+  class GuScholarPresenter < Hyku::WorkShowPresenter
   end
 end
