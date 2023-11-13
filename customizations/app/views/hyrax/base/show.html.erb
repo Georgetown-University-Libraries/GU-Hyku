@@ -15,7 +15,7 @@
       <div class="panel-body">
         <div class="row">
           <%= render 'workflow_actions_widget', presenter: @presenter %>
-          <% if @presenter.iiif_viewer? %>
+          <% if @presenter.iiif_viewer? || @presenter.file_set_presenters.any?(&:pdf?)%>
             <div class="col-sm-12">
               <%= render 'representative_media', presenter: @presenter, viewer: true %>
             </div>
@@ -25,7 +25,7 @@
             </div>
           <% end %>
           <div class="col-sm-3 text-center">
-            <%= render 'representative_media', presenter: @presenter, viewer: false unless @presenter.iiif_viewer? || @presenter.video_file_set_presenter %>
+            <%= render 'representative_media', presenter: @presenter, viewer: false unless @presenter.iiif_viewer? || @presenter.video_file_set_presenter || @presenter.file_set_presenters.any?(&:pdf?)%>
             <%= render 'citations', presenter: @presenter %>
             <%= render 'social_media' %>
           </div>
