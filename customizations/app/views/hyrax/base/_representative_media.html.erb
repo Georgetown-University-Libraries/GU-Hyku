@@ -2,7 +2,13 @@
   <% if defined?(viewer) && viewer && presenter.iiif_viewer?%>
     <%= iiif_viewer_display presenter %>
   <% elsif presenter.file_set_presenters.any?(&:pdf?) %>
-    <%= render 'pdf_js', file_set_presenter: presenter.file_set_presenters.first %>
+    <% if Flipflop.use_pdf_viewer? %>
+      <%= render 'pdf_js', file_set_presenter: presenter.file_set_presenters.first %>
+    <% else %>
+      <div class="col-sm-3 text-center">
+        <%= render media_display_partial(presenter.representative_presenter), file_set: presenter.representative_presenter %>
+      </div>
+    <% end %>
   <% else %>
     <%= render media_display_partial(presenter.representative_presenter), file_set: presenter.representative_presenter %>
   <% end %>
