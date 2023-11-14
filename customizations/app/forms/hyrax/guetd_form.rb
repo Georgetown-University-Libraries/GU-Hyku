@@ -35,6 +35,7 @@ module Hyrax
       :publisher,
       :relation,
       :rights_notes,
+      :source,
       :subject,
       :table_of_contents
     ]

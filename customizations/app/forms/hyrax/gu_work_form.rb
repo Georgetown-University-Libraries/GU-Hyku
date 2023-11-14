@@ -6,6 +6,7 @@ module Hyrax
     self.model_class = ::GuWork
     self.required_fields = [
       :title,
+      :contributor,
       :creator,
       :date_created,
       :description,
@@ -16,7 +17,6 @@ module Hyrax
     self.terms = self.required_fields + [
       :abstract,
       :archivesspace_id,
-      :contributor,
       :coverage,
       :date_available,
       :date_copyrighted,
@@ -26,6 +26,7 @@ module Hyrax
       :is_part_of,
       :is_part_of_series,
       :keyword,
+      :publisher,
       :rights_notes,
       :relation, 
       :source,

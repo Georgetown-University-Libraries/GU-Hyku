@@ -19,6 +19,7 @@ module Hyrax
       :bibliographic_citation,
       :contributor,
       :coverage,
+      :date_available,
       :date_copyrighted,
       :date_issued, 
       :description,
