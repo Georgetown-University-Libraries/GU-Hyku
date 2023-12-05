@@ -1,6 +1,2 @@
-<%= f.input :language, as: :select,
-    collection: LangsService.select_all_options,
-    include_blank: true,
-    #item_helper: method(:include_current_value),
-    input_html: { class: 'form-control' }
-%>
+<%= f.input :language, as: :select, collection: Hyrax::LangsService.new.select_all_options,
+    input_html: { class: 'form-control', multiple: true } %>

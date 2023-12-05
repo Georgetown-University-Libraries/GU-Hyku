@@ -16,7 +16,7 @@ module Hyrax
       :resource_type,
       :rights_statement
     ]
-    self.terms = self.required_fields + [
+    recommended_fields = [
       :contributor,
       :coverage, 
       :date_available,
@@ -39,5 +39,14 @@ module Hyrax
       :subject,
       :table_of_contents
     ]
+    ommitted_fields = [
+      :alternative_title,
+      :access_right,
+      :based_near,
+      :related_url,
+      :license
+    ]
+    non_metadata_fields = self.terms - recommended_fields - self.required_fields - ommitted_fields
+    self.terms = self.required_fields + recommended_fields + non_metadata_fields
   end
 end

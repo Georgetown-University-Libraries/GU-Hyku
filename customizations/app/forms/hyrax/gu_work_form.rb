@@ -6,17 +6,18 @@ module Hyrax
     self.model_class = ::GuWork
     self.required_fields = [
       :title,
-      :contributor,
       :creator,
       :date_created,
       :description,
       :language,
       :resource_type,
-      :rights_statement
+      :rights_statement,
+      :source
     ]
-    self.terms = self.required_fields + [
+    recommended_fields = [
       :abstract,
       :archivesspace_id,
+      :contributor,
       :coverage,
       :date_available,
       :date_copyrighted,
@@ -26,12 +27,20 @@ module Hyrax
       :is_part_of,
       :is_part_of_series,
       :keyword,
-      :publisher,
+      :publisher, 
       :rights_notes,
       :relation, 
-      :source,
       :subject,
       :table_of_contents 
     ]
+    ommitted_fields = [
+      :alternative_title,
+      :access_right,
+      :based_near,
+      :related_url,
+      :license
+    ]
+    non_metadata_fields = self.terms - recommended_fields - self.required_fields - ommitted_fields
+    self.terms = self.required_fields + recommended_fields + non_metadata_fields
   end
 end
