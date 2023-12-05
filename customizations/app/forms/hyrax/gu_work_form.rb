@@ -27,7 +27,7 @@ module Hyrax
       :is_part_of,
       :is_part_of_series,
       :keyword,
-      :publisher, 
+      :publisher,
       :rights_notes,
       :relation, 
       :subject,
