@@ -5,6 +5,12 @@ Hyrax.config do |config|
   config.register_curation_concern :generic_work
   # Injected via `rails g hyrax:work Image`
   config.register_curation_concern :image
+  # Injected via `rails g hyrax:work Guetd`
+  config.register_curation_concern :guetd
+  # Injected via `rails g hyrax:work GuScholar`
+  config.register_curation_concern :gu_scholar
+  # Injected via `rails g hyrax:work GuWork`
+  config.register_curation_concern :gu_work
 
   # Email recipient of messages sent via the contact form
   # This is set by account settings
