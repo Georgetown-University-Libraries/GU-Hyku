@@ -1130,21 +1130,44 @@ en:
         share_applies_to_new_works: When new works are created directly in the collection, grant sharing users and groups permissions for the new work according to their collection roles.
         title: ""
       defaults:
+        abstract: Enter the abstract for your work.
+        advisor: Enter the name of a person who advised the creator(s) of this work. Format&#58; Last, First.
+        archivesspace_id: Enter the reference ID (Ref_ID) from the "Basic Information" section of ArchivesSpace.
         based_near: A place name related to the work, such as its site of publication, or the city, state, or country the work contents are about. Calls upon the <a href='http://www.geonames.org'>GeoNames web service</a>.
-        contributor: A person or group you want to recognize for playing a role in the creation of the work, but not the primary role.
-        creator: The person or group responsible for the work. Usually this is the author of the content. Personal names should be entered with the last name first, e.g. &quot;Smith, John.&quot;.
-        date_created: The date on which the work was created.
-        description: Free-text notes about the work. Examples include abstracts of a paper or citation information for a journal article.
-        extent: The extent (size, duration, number, etc.) of the work.
-        identifier: A unique handle identifying the work. An example would be a DOI for a journal article, or an ISBN or OCLC number for a book.
-        keyword: Words or phrases you select to describe what the work is about. These are used to search for content.
-        language: The language of the work's content.
+        bibliographic_citation: Enter the citation of this work.
+        contributor: A person or group you want to recognize for playing a role in the development of the work, but not the primary creator. Format&#58; Last, First
+        coverage: May refer to timespan or geographical area. If timespan, enter a year or years relevant to the work's content. If geographic enter a region, city, or country, relevant to the work's content.
+        creator: The person or group responsible for the work. Personal names should be entered with the last name first, e.g. &quot;Smith, John.&quot;.
+        date_available: Enter the date when this item will be made public on DigitalGeorgetown. Format&#58; "YYYY-MM-DD".
+        date_copyrighted: Enter the year when this item was copyrighted. Format&#58; "YYYY"
+        date_created: The date on which the work was created. Please use the following format&#58; YYYY-MM-DD, if month and day unknown use the full year (YYYY).
+        date_issued: Enter the date that this work was issued. Format&#58; "YYYY" or "YYYY-MM-DD".
+        department: Enter the Georgetown University department, institute, or center that the work comes from or is affiliated with.
+        description: Describe the work, concisely, here.
+        doi: Enter the work's DOI.
+        embargo_date: Enter the date for when the embargo was put into affect. Format&#58; YYYY-MM-DD
+        embargo_lift_date: Enter the date for when the embargo will be lifted. Format&#58; YYYY-MM-DD.
+        embargo_terms: Enter the terms around the embargo for this work.
+        extent: Enter the size or duration of this work, e.g. page count (no. pages), recording length (hh:mm:ss or hh:mm or mm:ss), etc.
+        format: Enter the file format of this work, e.g. PDF, MP3, JPG, MP4, CSV.
+        identifier: Enter a unique indentifier for this work, e.g. a URI, an alternative title, an OCLC number, or a catalog number.
+        is_part_of: Enter the collection name that this work is a part of.
+        is_part_of_series: Enter the series that this work is a part of.
+        issn: Enter the ISSN for this work.
+        keyword: Enter a word that describes the work's content. These will be used in the to search function.
+        language: The language(s) of the work's content.
         license: Licensing and distribution information governing access to the work. Select from the provided drop-down list.
-        publisher: The person or group making the work available. Generally this is the institution.
+        orchid: Enter the work's ORCID.
+        publisher: Enter the name or entity responsible for producing this work. 
         related_url: A link to a website or other specific content (audio, video, PDF document) related to the work. An example is the URL of a research project from which the work was derived.
-        resource_type: Pre-defined categories to describe the type of content being uploaded, such as &quot;article&quot; or &quot;dataset.&quot;  More than one type may be selected.
-        subject: Headings or index terms describing what the work is about; these do need to conform to an existing vocabulary.
-        title: A name to aid in identifying a work.
+        relation: Enter related material.
+        resource_type: Pick a type to describe the content being uploaded, such as "article" or "dataset." More than one type may be selected by holding the 'Crtl' button when selecting.
+        rights_notes: Enter information about rights held in and over the work.
+        rights_statement: Select the appropriate statement from the drop down menu.
+        source: Source of the work
+        subject: Only use official Library of Congress Subject Headings, a controlled vocabulary, for this field.
+        table_of_contents: Enter a table of contents, or list of subunits, relevant to the work.
+        title: Enter the primary title for this work
     labels:
       collection:
         size: Size
