@@ -20,6 +20,10 @@ class GuScholar < ActiveFedora::Base
     index.as :stored_searchable
   end
 
+  property :date_available, predicate: ::RDF::Vocab::DC.available do |index|
+    index.as :stored_searchable
+  end
+
   property :date_copyrighted, predicate: ::RDF::Vocab::DC.dateCopyrighted do |index|
     index.as :stored_searchable
   end
