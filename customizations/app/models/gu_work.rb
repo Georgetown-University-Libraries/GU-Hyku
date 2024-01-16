@@ -48,6 +48,11 @@ class GuWork < ActiveFedora::Base
     index.as :stored_searchable
   end
 
+  #This property is used in Bulkrax: https://github.com/samvera/bulkrax/wiki/Configuring-Bulkrax#source-identifier
+  property :source_identifier, predicate: ::RDF::URI.new("http://repository.library.georgetown.edu/ns#bulkrax_identifier"), multiple: false do |index|
+    index.as :stored_searchable
+  end
+
   property :table_of_contents, predicate: ::RDF::Vocab::DC.tableOfContents do |index|
     index.as :stored_searchable
   end
