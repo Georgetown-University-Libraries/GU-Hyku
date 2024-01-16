@@ -15,6 +15,6 @@ services:
       - HYKU_ADMIN_HOST=lvh.me
       - HYKU_DEFAULT_HOST=%{tenant}.lvh.me
       - HYKU_ROOT_HOST=lvh.me
-      - FCREPO_HOST=lvh.me
+      # - FCREPO_HOST=lvh.me
     ports:
       - "3000:3000"
