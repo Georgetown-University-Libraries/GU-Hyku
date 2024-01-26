@@ -2,9 +2,9 @@
 ENV['HYRAX_USE_SOLR_GRAPH_NESTING'].present? || ENV['HYRAX_USE_SOLR_GRAPH_NESTING'] = "true"
 
 Hyrax.config do |config|
-  config.register_curation_concern :generic_work
+  #config.register_curation_concern :generic_work
   # Injected via `rails g hyrax:work Image`
-  config.register_curation_concern :image
+  #config.register_curation_concern :image
   # Injected via `rails g hyrax:work Guetd`
   config.register_curation_concern :guetd
   # Injected via `rails g hyrax:work GuScholar`
