@@ -1151,7 +1151,6 @@ en:
         extent: Enter the size or duration of this work, e.g. page count (no. pages), recording length (hh:mm:ss or hh:mm or mm:ss), etc.
         format: Enter the file format of this work, e.g. PDF, MP3, JPG, MP4, CSV.
         identifier: Enter a unique indentifier for this work, e.g. a URI, an alternative title, an OCLC number, or a catalog number.
-        is_part_of: Enter the collection name that this work is a part of.
         is_part_of_series: Enter the series that this work is a part of.
         issn: Enter the ISSN for this work.
         keyword: Enter a word that describes the work's content. These will be used in the to search function.
@@ -1201,15 +1200,17 @@ en:
         embargo_terms: Embargo Terms
         embargo_release_date: until
         files: Upload a file
-        is_part_of: Is Part Of
+        handle: Handle
         is_part_of_series: Is Part Of Series
         issn: ISSN
         keyword: Keyword
         lease_expiration_date: until
+        lcc: Library of Congress Classification
         license: License
         member_of_collection_ids: Add to collection
         orcid: ORCID
         related_url: Related URL
+        repository_legacy: Repository Legacy
         resource_type: Resource Type
         rights_statement: Rights Statement
         rights_notes: Rights Note

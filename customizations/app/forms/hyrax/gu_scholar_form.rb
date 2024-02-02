@@ -16,6 +16,7 @@ module Hyrax
     recommended_fields = [
       :abstract,
       :advisor,
+      :alternative_title,
       :bibliographic_citation,
       :contributor,
       :coverage,
@@ -30,6 +31,8 @@ module Hyrax
       :issn,
       :keyword,
       :orcid,
+      :lcc,
+      :provenance,
       :publisher,
       :relation,
       :rights_notes,
@@ -39,7 +42,6 @@ module Hyrax
       :table_of_contents
     ]
     ommitted_fields = [
-      :alternative_title,
       :access_right,
       :based_near,
       :related_url,

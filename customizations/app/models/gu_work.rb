@@ -2,13 +2,15 @@
 #  `rails generate hyrax:work GuWork`
 class GuWork < ActiveFedora::Base
   include ::Hyrax::WorkBehavior
+  include ::Bulkrax::Metadata
 
   self.indexer = GuWorkIndexer
   # Change this to restrict which works can be added as a child.
   # self.valid_child_concerns = []
   validates :title, presence: { message: 'Your work must have a title.' }
 
-  property :archivesspace_id, predicate: ::RDF::URI.new("http://repository.library.georgetown.edu/ns#archivesspace_id") do |index|
+  #TODO: Replace repository.libary.georgetown.edu with new DG domain (once live)
+  property :archivesspace_id, predicate: ::RDF::URI.new("https://repository.library.georgetown.edu/ns#archivesspace_id") do |index|
     index.as :stored_searchable
   end
 
@@ -32,11 +34,18 @@ class GuWork < ActiveFedora::Base
     index.as :stored_searchable, :facetable
   end
 
-  property :is_part_of, predicate: ::RDF::Vocab::DC.isPartOf do |index|
+  #TODO: Replace repository.libary.georgetown.edu with new DG domain (once live)
+  property :handle, predicate: ::RDF::URI.new("http://repository.library.georgetown.edu/ns#handle"), multiple: false do |index|
     index.as :stored_searchable
   end
 
-  property :is_part_of_series, predicate: ::RDF::URI.new("http://repository.library.georgetown.edu/ns#is_part_of_series") do |index|
+  #TODO: Replace repository.libary.georgetown.edu with new DG domain (once live)
+  property :is_part_of_series, predicate: ::RDF::URI.new("https://repository.library.georgetown.edu/ns#is_part_of_series") do |index|
+    index.as :stored_searchable
+  end
+
+  #TODO: Replace repository.libary.georgetown.edu with new DG domain (once live)
+  property :lcc, predicate: ::RDF::URI.new("http://repository.library.georgetown.edu/ns#lcc"), multiple: false do |index|
     index.as :stored_searchable
   end
 
@@ -48,8 +57,8 @@ class GuWork < ActiveFedora::Base
     index.as :stored_searchable
   end
 
-  #This property is used in Bulkrax: https://github.com/samvera/bulkrax/wiki/Configuring-Bulkrax#source-identifier
-  property :source_identifier, predicate: ::RDF::URI.new("http://repository.library.georgetown.edu/ns#bulkrax_identifier"), multiple: false do |index|
+  #TODO: Replace repository.libary.georgetown.edu with new DG domain (once live)
+  property :repository_legacy, predicate: ::RDF::URI.new("http://repository.library.georgetown.edu/ns#repository_legacy"), multiple: false do |index|
     index.as :stored_searchable
   end
 

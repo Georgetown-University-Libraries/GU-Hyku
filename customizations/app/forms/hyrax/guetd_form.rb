@@ -17,6 +17,7 @@ module Hyrax
       :rights_statement
     ]
     recommended_fields = [
+      :alternative_title,
       :contributor,
       :coverage, 
       :date_available,
@@ -31,7 +32,9 @@ module Hyrax
       :identifier,
       :keyword,
       :license,
+      :lcc,
       :orcid,
+      :provenance,
       :publisher,
       :relation,
       :rights_notes,
@@ -40,7 +43,6 @@ module Hyrax
       :table_of_contents
     ]
     ommitted_fields = [
-      :alternative_title,
       :access_right,
       :based_near,
       :related_url,

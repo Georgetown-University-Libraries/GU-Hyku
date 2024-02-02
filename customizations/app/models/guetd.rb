@@ -2,13 +2,14 @@
 #  `rails generate hyrax:work Guetd`
 class Guetd < ActiveFedora::Base
   include ::Hyrax::WorkBehavior
+  include ::Bulkrax::Metadata
 
   self.indexer = GuetdIndexer
   # Change this to restrict which works can be added as a child.
   # self.valid_child_concerns = []
   validates :title, presence: { message: 'Your work must have a title.' }
 
-  property :advisor, predicate: ::RDF::URI.new("http://repository.library.georgetown.edu/ns#advisor") do |index|
+  property :advisor, predicate: ::RDF::URI.new("https://repository.library.georgetown.edu/ns#advisor") do |index|
     index.as :stored_searchable, :facetable
   end
 
@@ -28,23 +29,28 @@ class Guetd < ActiveFedora::Base
     index.as :stored_searchable
   end
 
-  property :department, predicate: ::RDF::URI.new("http://repository.library.georgetown.edu/ns#department") do |index|
+  #TODO: Replace repository.libary.georgetown.edu with new DG domain (once live)
+  property :department, predicate: ::RDF::URI.new("https://repository.library.georgetown.edu/ns#department") do |index|
     index.as :stored_searchable, :facetable
   end
 
-  property :doi, predicate: ::RDF::URI.new("http://repository.library.georgetown.edu/ns#doi") do |index|
+  #TODO: Replace repository.libary.georgetown.edu with new DG domain (once live)
+  property :doi, predicate: ::RDF::URI.new("https://repository.library.georgetown.edu/ns#doi") do |index|
     index.as :stored_searchable
   end
 
-  property :embargo_date, predicate: ::RDF::URI.new("http://repository.library.georgetown.edu/ns#embargo_date") do |index|
+  #TODO: Replace repository.libary.georgetown.edu with new DG domain (once live)
+  property :embargo_date, predicate: ::RDF::URI.new("https://repository.library.georgetown.edu/ns#embargo_date") do |index|
     index.as :stored_searchable
   end
 
-  property :embargo_lift_date, predicate: ::RDF::URI.new("http://repository.library.georgetown.edu/ns#embargo_lift_date") do |index|
+  #TODO: Replace repository.libary.georgetown.edu with new DG domain (once live)
+  property :embargo_lift_date, predicate: ::RDF::URI.new("https://repository.library.georgetown.edu/ns#embargo_lift_date") do |index|
     index.as :stored_searchable
   end
 
-  property :embargo_terms, predicate: ::RDF::URI.new("http://repository.library.georgetown.edu/ns#embargo_terms") do |index|
+  #TODO: Replace repository.libary.georgetown.edu with new DG domain (once live)
+  property :embargo_terms, predicate: ::RDF::URI.new("https://repository.library.georgetown.edu/ns#embargo_terms") do |index|
     index.as :stored_searchable
   end
 
@@ -56,7 +62,18 @@ class Guetd < ActiveFedora::Base
     index.as :stored_searchable, :facetable
   end
 
-  property :orcid, predicate: ::RDF::URI.new("http://repository.library.georgetown.edu/ns#orcid") do |index|
+  #TODO: Replace repository.libary.georgetown.edu with new DG domain (once live)
+  property :handle, predicate: ::RDF::URI.new("http://repository.library.georgetown.edu/ns#handle"), multiple: false do |index|
+    index.as :stored_searchable
+  end
+
+  #TODO: Replace repository.libary.georgetown.edu with new DG domain (once live)
+  property :orcid, predicate: ::RDF::URI.new("https://repository.library.georgetown.edu/ns#orcid") do |index|
+    index.as :stored_searchable
+  end
+
+  #TODO: Replace repository.libary.georgetown.edu with new DG domain (once live)
+  property :lcc, predicate: ::RDF::URI.new("http://repository.library.georgetown.edu/ns#lcc"), multiple: false do |index|
     index.as :stored_searchable
   end
 
@@ -68,8 +85,8 @@ class Guetd < ActiveFedora::Base
     index.as :stored_searchable
   end
 
-  #This property is used in Bulkrax: https://github.com/samvera/bulkrax/wiki/Configuring-Bulkrax#source-identifier
-  property :source_identifier, predicate: ::RDF::URI.new("http://repository.library.georgetown.edu/ns#bulkrax_identifier"), multiple: false do |index|
+  #TODO: Replace repository.libary.georgetown.edu with new DG domain (once live)
+  property :repository_legacy, predicate: ::RDF::URI.new("http://repository.library.georgetown.edu/ns#repository_legacy"), multiple: false do |index|
     index.as :stored_searchable
   end
 
