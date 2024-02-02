@@ -94,7 +94,7 @@ if ENV.fetch('HYKU_BULKRAX_ENABLED', 'true') == 'true'
       'creator' => { from: ['creator'], split: /\s*[||]\s*/ },
       'contributor' => { from: ['contributor'], split: /\s*[||]\s*/ },
       'coverage' => { from: ['coverage',], split: /\s*[||]\s*/ },
-      'date_available' => { from: ['data_available'], split: /\s*[||]\s*/ },
+      'date_available' => { from: ['date_available'], split: /\s*[||]\s*/ },
       'date_copyrighted' => { from: ['date_copyrighted'], split: /\s*[||]\s*/ },
       'date_created' => { from: ['date_created'], split: /\s*[||]\s*/ },
       'date_issued' => { from: ['date_issued'], split: /\s*[||]\s*/ },
