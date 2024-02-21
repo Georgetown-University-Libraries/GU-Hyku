@@ -7,11 +7,6 @@ class Collection < ActiveFedora::Base
   include ::Bulkrax::Metadata
   include ::Hyrax::BasicMetadata
 
-  #TODO: Replace repository.libary.georgetown.edu with new DG domain (once live)
-  property :handle, predicate: ::RDF::URI.new("http://repository.library.georgetown.edu/ns#handle"), multiple: false do |index|
-    index.as :stored_searchable
-  end
-
   self.indexer = CollectionIndexer
   after_update :remove_featured, if: proc { |collection| collection.private? }
   after_destroy :remove_featured
