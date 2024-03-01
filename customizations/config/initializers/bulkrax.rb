@@ -13,7 +13,7 @@ if ENV.fetch('HYKU_BULKRAX_ENABLED', 'true') == 'true'
 
     # WorkType to use as the default if none is specified in the import
     # Default is the first returned by Hyrax.config.curation_concerns
-    config.default_work_type = GuWork
+    config.default_work_type = "GuWork"
 
     # You can use any available arguments, not just 'obj' and 'index'
     config.fill_in_blank_source_identifiers = ->(obj, index) { "#{Site.instance.account.name}-#{obj.importerexporter.id}-#{index}" }
