@@ -1,0 +1,243 @@
+body {
+    margin-bottom: unset;
+}
+
+footer {
+    margin-top: 7.2rem !important;
+    background-color: #041E42;
+	color: white;
+}
+
+div.panel-footer {
+  background-color: #041E42;
+  border-top: unset;
+  border-bottom-right-radius: unset;
+  border-bottom-left-radius: unset;
+  color: white;
+}
+
+div.panel-footer a {
+	color: #7bace4!important;
+	text-shadow: none!important;
+}
+
+div.panel-footer div.branding-container a {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+
+div.panel-footer.gureps {
+    background-color: transparent;
+    margin-bottom: -92px;
+  }
+    
+  @media (max-width: 664px) {
+    div.panel-footer.gureps {
+      margin-bottom: -125px;
+    }
+  }
+       
+  div.panel-footer div.branding-container {
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  @media (max-width: 664px) {
+    div.panel-footer .gureplogo:last-of-type {
+      position: relative;
+      top: 10px;
+    }
+  }
+  
+  footer div.branding-container {
+      margin-bottom: 10px;
+      text-align: center;
+  }
+
+/* Rules for customized version of GU Library website footer below */
+
+.footer a {
+    text-shadow: unset;
+}
+
+.footer {
+    text-align: unset;
+}
+  
+  .site-footer {
+    font-family: futura-pt,sans-serif;
+    padding: 0 0 30px;
+    background: #041e42;
+    display: block;
+    position: unset;
+    bottom: unset;
+    height: unset;
+  }
+  
+  .site-footer .container {
+    padding-top: 77px;
+    padding-bottom: 57px;
+    background-image: url(https://www.georgetown.edu/wp-content/themes/georgetown/pattern_lab/source/images/icons/seal.svg);
+    background-repeat: no-repeat;
+    background-position: right -50px;
+    padding-right: var(--bs-gutter-x,12px);
+    padding-left: var(--bs-gutter-x,12px);
+    margin-right: auto;
+    margin-left: auto;
+  }
+  
+  @media (min-width: 1440px) {
+    .site-footer .container {
+        width: 1440px;
+    }
+  }
+  
+  .site-footer .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(-1 * var(--bs-gutter-y));
+    margin-right: calc(-.5 * var(--bs-gutter-x));
+    margin-left: calc(-.5 * var(--bs-gutter-x));
+  }
+  
+  @media (min-width: 560px) {
+    .site-footer__top .region {
+      float: left;
+      position: relative;
+      width: 50%;
+    }
+  }
+  
+  @media (min-width: 851px) {
+    .site-footer__top .region:first-child {
+        padding-left: 0;
+    }
+  }
+  
+  @media (min-width: 851px) {
+    .site-footer__top .region {
+      width: 24%;
+      padding: 0 0.65%;
+    }
+  }
+  
+  .site-footer .row>* {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .site-footer *, .site-footer ::after, .site-footer ::before {
+    box-sizing: border-box;
+  }
+  
+  .site-footer .block {
+    margin: 20px 0;
+    border: none;
+    padding: 10px;
+  }
+  
+  .site-footer__bottom {
+    margin-top: 30px;
+  }
+  
+  .site-footer__bottom .region {
+    margin-top: 20px;
+  }
+  
+  .site-footer__bottom .block {
+    margin: 8px 0;
+  }
+  
+  .site-footer .content {
+    color: #c0c0c0;
+    color: rgba(255,255,255,0.65);
+    font-size: 19.1968px;
+  }
+  
+  .site-footer ul {
+    font-size: 17.728px;
+    padding-left: 1.4em;
+    list-style: none;
+    margin-top: 0;
+    margin-bottom: 16px;
+  }
+  
+  .site-footer .content a {
+    border-bottom: none;
+    display: block;
+    border-color: rgba(255,255,255,0.15);
+    line-height: 1.2;
+    padding: 14.1824px 2px 14.1824px 20px;
+    text-indent: -15px;
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+  }
+  
+  .site-footer .content a:hover, .site-footer .content a:focus {
+    color: rgba(255,255,255,0.95);
+  }
+  
+  .site-footer__top .content li a:hover, .site-footer__top .content li a:focus {
+    background-color: rgba(255,255,255,0.05);
+    text-decoration: none;
+  }
+  
+  .site-footer ul li a svg {
+    margin-right: 15px;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+  }
+  
+  #block-footeraddress {
+    font-size: 1.4rem;
+    line-height: 2.1;
+    font-family: adobe-caslon-pro,serif;
+    font-style: italic;
+    font-weight: 400;
+  }
+  
+  #block-footeraddress a {
+    padding: 8px 0px 16px 16px;
+  }
+  
+  .site-footer__top p {
+    margin-top: 19.196px;
+  }
+  
+  .site-footer__bottom .block {
+    padding: 0;
+  }
+  
+  .site-footer__bottom .content {
+    padding: 6.856px 0;
+  }
+  
+  #block-footerbottom ul {
+    display: flex;
+    justify-content: flex-end;
+    column-gap: 32px;
+  }
+  
+  #block-footerbottom ul li {
+    font-size: 13.712px;
+  }
+  
+  #block-footerbottom ul li a {
+    padding-top: unset;
+    padding-bottom: unset;
+  } 
+  
+  @media (max-width: 586px) {
+  
+    #block-footerbottom ul {
+      padding-left: unset;
+    }
+  
+    #block-footerbottom ul li a {
+      text-indent: unset;
+    } 
+  }

@@ -5,6 +5,7 @@
     <%= stylesheet_link_tag 'fonts', media: 'all', 'data-turbolinks-track' => true %>
     <%= render partial: 'layouts/head_tag_content' %>
     <%= content_for(:head) %>
+    <%= stylesheet_link_tag 'footer', media: 'all', 'data-turbolinks-track' => true %>
   </head>
   <% content_for(:extra_body_classes, 'public-facing') unless params[:controller].match(/^proprietor/) %>
 
