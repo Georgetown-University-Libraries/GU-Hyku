@@ -91,6 +91,7 @@ gem 'turbolinks', '~> 5'
 gem 'web-console', '>= 3.3.0', group: %i[development] # <%= console %> in views
 gem 'webdrivers', '~> 4.7.0', group: %i[test]
 gem 'webmock', group: %i[test]
+gem 'xray-rails', group: %i[development]
 
 # This gem does nothing by default, but is instead a tool to ease developer flow
 # and place overrides, themes and deployment code.
