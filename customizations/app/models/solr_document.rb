@@ -49,6 +49,10 @@ class SolrDocument
     def vtt?
       self['mime_type_ssi'] == 'text/vtt'
     end
+
+    def handle 
+      self['handle_tesim'].first
+    end  
   
     def language_code
       self['language_codes_ssi']
