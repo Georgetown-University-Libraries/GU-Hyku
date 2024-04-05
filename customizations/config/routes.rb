@@ -6,11 +6,8 @@ require 'sidekiq/web'
 
 Rails.application.routes.draw do # rubocop:disable Metrics/BlockLength
   
-  #routes for handle URL patterns
+  #route for handle URLs
   get "/handle/#{ENV.fetch('HANDLE_PREFIX', '10822')}/:handle" => 'hyrax/handles#show', as: 'handles'
-  get '/concern/gu_works/:id' => 'hyrax/handles#redirect'
-  get '/concern/gu_scholars/:id' => 'hyrax/handles#redirect'
-  get '/concern/guetds/:id' => 'hyrax/handles#redirect'
   
   resources :identity_providers
   concern :iiif_search, BlacklightIiifSearch::Routes.new
