@@ -7,7 +7,7 @@ module Hyrax
     def id
       resp = Hyrax::SolrService.get("handle_tesim: #{params[:handle]}")
       solr_hash = resp.dig("response", "docs", 0)
-      @id = solr_hash["id"]
+      @id = solr_hash["id"] unless solr_hash.nil?
     end
     
     # def work_type
@@ -32,6 +32,7 @@ module Hyrax
     def show
       @user_collections = user_collections
       @id = id
+      return redirect_to root_path, alert: "Record with handle suffix '#{params[:handle]}' does not exist" if id.nil?
       respond_to do |wants|
         wants.html { presenter && parent_presenter }
         wants.json do
