@@ -7,7 +7,7 @@ module Hyrax
     def id
       resp = Hyrax::SolrService.get("handle_tesim: #{params[:handle]}")
       solr_hash = resp.dig("response", "docs", 0)
-      @id = solr_hash["id"] unless solr_hash.nil?
+      @id = solr_hash["id"] unless solr_hash.blank?
     end
     
     # def work_type

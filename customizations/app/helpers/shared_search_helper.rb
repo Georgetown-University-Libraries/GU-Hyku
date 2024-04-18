@@ -12,7 +12,7 @@ module SharedSearchHelper
     id = model["id"]
 
     #needed for handle URLs
-    handle = model["handle_tesim"].first unless model["handle_tesim"].nil?
+    handle = model["handle_tesim"].first unless model["handle_tesim"].blank?
 
     request_params = %i[protocol host port].map { |method| ["request_#{method}".to_sym, request.send(method)] }.to_h
 
