@@ -20,5 +20,5 @@ Flipflop.configure do
   feature :show_recently_uploaded,
           default: true,
           description: "Shows the Recently Uploaded tab on the homepage."
-  end
+end
   
