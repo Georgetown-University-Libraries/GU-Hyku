@@ -28,13 +28,13 @@ module Hyrax
             .encode('UTF-8', 'binary', invalid: :replace, undef: :replace, replace: '') # remove non-UTF-8 characters
       end
 
-      def translations
-        extend(Hyrax::HyraxHelperBehavior).available_translations
-          # add more translations here
-          .merge({
-            "ja" => "日本語"
-            })
-      end
+      # def translations
+      #   extend(Hyrax::HyraxHelperBehavior).available_translations
+      #     # add more translations here
+      #     .merge({
+      #       "ja" => "日本語"
+      #       })
+      # end
   end
 end
 
