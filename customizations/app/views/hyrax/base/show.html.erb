@@ -5,9 +5,9 @@
 <%= render 'shared/citations' %>
 <%= render 'shared/additional_citations' %>
 <div class="row work-type">
-  <div class="col-sm-12">
-    <%= render 'work_type', presenter: @presenter %>
-  </div>
+  <!--<div class="col-sm-12">
+    <%# render 'work_type', presenter: @presenter %>
+  </div>-->
   <div itemscope itemtype="http://schema.org/CreativeWork" class="col-xs-12">
     <%= render 'work_title', presenter: @presenter %>
     <%= render 'show_actions', presenter: @presenter %>
@@ -27,7 +27,7 @@
           <div class="col-sm-3 text-center">
             <%= render 'representative_media', presenter: @presenter, viewer: false unless @presenter.iiif_viewer? || @presenter.video_file_set_presenter || @presenter.file_set_presenters.any?(&:pdf?)%>
             <%= render 'citations', presenter: @presenter %>
-            <%= render 'social_media' %>
+            <%# render 'social_media' %>
           </div>
           <div class="col-sm-9">
             <%= render 'work_description', presenter: @presenter %>
