@@ -1,0 +1,15 @@
+<dt>In Collections:</dt>
+<dd>
+  <ul class="tabular">
+    <% presenter.ancestor_collections.each do |collections| %>
+      <li class='attribute attribute-title'>
+        <% collections.each do |collection| %>
+          <a href="/collections/<%= collection[1] %>"%><%= collection[0] %> </a>
+          <% if collection != collections.last %>
+            &gt;
+          <% end %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</dd>
