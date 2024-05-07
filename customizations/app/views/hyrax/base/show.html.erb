@@ -19,17 +19,20 @@
             <div class="col-sm-12">
               <%= render 'representative_media', presenter: @presenter, viewer: true %>
             </div>
+            <div class="col-sm-12">
           <% elsif @presenter.video_file_set_presenter %>
             <div class="col-sm-12">
               <%= render 'video_player', presenter: @presenter, viewer: false %>
             </div>
+            <div class="col-sm-12">
+          <% else %>
+            <div class="col-sm-3 text-center">
+              <%= render 'representative_media', presenter: @presenter, viewer: false %>
+              <%# render 'citations', presenter: @presenter %>
+              <%# render 'social_media' %>
+            </div>
+            <div class="col-sm-9">
           <% end %>
-          <div class="col-sm-3 text-center">
-            <%= render 'representative_media', presenter: @presenter, viewer: false unless @presenter.iiif_viewer? || @presenter.video_file_set_presenter || @presenter.file_set_presenters.any?(&:pdf?)%>
-            <%= render 'citations', presenter: @presenter %>
-            <%# render 'social_media' %>
-          </div>
-          <div class="col-sm-9">
             <%= render 'work_description', presenter: @presenter %>
             <%= render 'metadata', presenter: @presenter %>
           </div>
