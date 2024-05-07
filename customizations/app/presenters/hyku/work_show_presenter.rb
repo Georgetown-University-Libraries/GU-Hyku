@@ -75,9 +75,13 @@ module Hyku
             if ancestor_id
               while ancestor_id 
                 doc = Hyrax::SolrService.get("id: #{ancestor_id}").dig("response", "docs", 0)
-                title = doc["title_tesim"]&.first
-                ids.prepend([title, ancestor_id]) if ancestor_id
-                ancestor_id = doc["member_of_collection_ids_ssim"]&.first
+                if doc
+                  title = doc["title_tesim"]&.first
+                  ids.prepend([title, ancestor_id]) if ancestor_id
+                  ancestor_id = doc["member_of_collection_ids_ssim"]&.first
+                else
+                  ancestor_id = false
+                end
               end
             end
             ancestor_titles_and_ids.prepend(ids)
