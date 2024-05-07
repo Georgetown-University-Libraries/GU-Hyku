@@ -1,10 +1,10 @@
 ---
 en:
   hyrax:
-    product_name: "Hyku"
+    product_name: "Digital Georgetown"
     product_twitter_handle: "@HydraInABox"
-    institution_name: "Institution"
-    institution_name_full: "Institution"
+    institution_name: "GU"
+    institution_name_full: "Georgetown Univeristy"
     account_name: "Account Id"
     directory:
       suffix: "@hydrainabox.org"
@@ -366,15 +366,15 @@ en:
       items:
         actions: Actions
         date_uploaded: Date Uploaded
-        empty: This %{type} has no files associated with it. Click "edit" to add more files.
+        empty: This work has no files associated with it. Click "Edit" above to add files.
         file_size: File Size
         header: Items
         thumbnail: Thumbnail
         title: Title
-        unauthorized: There are no publicly available items in this %{type}.
+        unauthorized: There are no publicly available items in this work.
         visibility: Visibility
       relationships:
-        empty: This %{type} is not currently in any collections.
+        empty: This work is not currently in any collections.
         header: Relationships
       relationships_parent_row:
         label: "In %{type}:"
