@@ -6,7 +6,7 @@ class GuScholar < ActiveFedora::Base
 
   self.indexer = GuScholarIndexer
   # Change this to restrict which works can be added as a child.
-  # self.valid_child_concerns = []
+  self.valid_child_concerns = []
   validates :title, presence: { message: 'Your work must have a title.' }
 
   #TODO: Replace repository.libary.georgetown.edu with new DG domain (once live)

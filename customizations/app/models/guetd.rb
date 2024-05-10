@@ -6,7 +6,7 @@ class Guetd < ActiveFedora::Base
 
   self.indexer = GuetdIndexer
   # Change this to restrict which works can be added as a child.
-  # self.valid_child_concerns = []
+  self.valid_child_concerns = []
   validates :title, presence: { message: 'Your work must have a title.' }
 
   property :advisor, predicate: ::RDF::URI.new("https://repository.library.georgetown.edu/ns#advisor") do |index|
