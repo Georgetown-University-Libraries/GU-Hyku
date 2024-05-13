@@ -367,10 +367,12 @@ en:
         actions: Actions
         date_uploaded: Date Uploaded
         empty: This work has no files associated with it. Click "Edit" above to add files.
-        file_size: File Size
+        extent: Extent
+        file_format: Format
+        file_size: Size
         header: Items
         thumbnail: Thumbnail
-        title: Title
+        title: Name
         unauthorized: There are no publicly available items in this work.
         visibility: Visibility
       relationships:
