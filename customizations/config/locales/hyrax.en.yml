@@ -1,7 +1,7 @@
 ---
 en:
   hyrax:
-    product_name: "Digital Georgetown"
+    product_name: "DigitalGeorgetown"
     product_twitter_handle: "@HydraInABox"
     institution_name: "GU"
     institution_name_full: "Georgetown Univeristy"
@@ -16,6 +16,10 @@ en:
       models:
         generic_work: "Work"
         image: "Image"
+        gu_work: "GU Work"
+        guetd: "GU ETD"
+        gu_scholar: "GU Scholar"
+        gll_work: "GLL Work"
     active_consent_to_agreement: I have read and agree to the
     admin:
       admin_sets:
@@ -1165,9 +1169,11 @@ en:
         resource_type: Pick a type to describe the content being uploaded, such as "article" or "dataset." More than one type may be selected by holding the 'Crtl' button when selecting.
         rights_notes: Enter information about rights held in and over the work.
         rights_statement: Select the appropriate statement from the drop down menu.
+        spatial: A region, city, or country, relevant to the item's content.
         source: Source of the work
         subject: Only use official Library of Congress Subject Headings, a controlled vocabulary, for this field.
         table_of_contents: Enter a table of contents, or list of subunits, relevant to the work.
+        temporal: The timespan this work covers, a year or years relevant to the work's content.
         title: Enter the primary title for this work
     labels:
       collection:
@@ -1188,9 +1194,11 @@ en:
         title: Type name
       defaults:
         admin_set_id: Administrative Set
+        alternative_title: Alternative Title
         archivesspace_id: ArchivesSpace ID
         based_near: Location
-        bibliographic_citation: Bibliographic Citation
+        bibliographic_citation: Citation
+        classification: Location
         creator: Creator
         date_available: Date Available
         date_created: Date Created
@@ -1202,21 +1210,30 @@ en:
         embargo_terms: Embargo Terms
         embargo_release_date: until
         files: Upload a file
+        govdoc: SuDoc
         handle: Handle
+        gu_is_part_of: Is Part Of
         is_part_of_series: Is Part Of Series
+        isbn: ISBN
         issn: ISSN
         keyword: Keyword
         lease_expiration_date: until
         lcc: Library of Congress Classification
+        lcsh: Library of Congress Subject
         license: License
+        medium: Physical Format
         member_of_collection_ids: Add to collection
         orcid: ORCID
+        other_identifier: Other Identifier
         related_url: Related URL
+        relation_uri: Streaming Media Link
         repository_legacy: Repository Legacy
         resource_type: Resource Type
         rights_statement: Rights Statement
         rights_notes: Rights Note
+        spatial: Geographic Location
         table_of_contents: Table of Contents
+        temporal: Time Period
         title: Title
         visibility_after_embargo: then open it up to
         visibility_after_lease: then restrict it to

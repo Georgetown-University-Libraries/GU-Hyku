@@ -24,12 +24,15 @@ module Hyrax
       :date_copyrighted,
       :date_issued,
       :doi,
+      :editor,
       :embargo_date,
       :embargo_lift_date,
       :embargo_terms,
       :extent,
       :format,
+      :govdoc,
       :identifier,
+      :isbn,
       :keyword,
       :license,
       :lcc,
@@ -37,10 +40,13 @@ module Hyrax
       :provenance,
       :publisher,
       :relation,
+      :relation_uri,
       :rights_notes,
       :source,
+      :spatial,
       :subject,
-      :table_of_contents
+      :table_of_contents,
+      :temporal
     ]
     ommitted_fields = [
       :access_right,

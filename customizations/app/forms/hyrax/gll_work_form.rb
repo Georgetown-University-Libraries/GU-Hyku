@@ -34,6 +34,7 @@ module Hyrax
       :is_part_of_series,
       :isbn,
       :issn,
+      :keyword,
       :language,
       :lcc,
       :lcsh,
