@@ -1,0 +1,8 @@
+it:
+  hyrax:
+    icons:
+      gll_work:     'fa fa-file-text-o'
+    select_type:
+      gll_work:
+        description:        "Gll work opere"
+        name:               "Gll Work"

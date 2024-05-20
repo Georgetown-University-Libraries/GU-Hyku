@@ -11,6 +11,8 @@ Hyrax.config do |config|
   config.register_curation_concern :gu_scholar
   # Injected via `rails g hyrax:work GuWork`
   config.register_curation_concern :gu_work
+  # Injected via `rails g hyrax:work GllWork`
+  config.register_curation_concern :gll_work
 
   # Email recipient of messages sent via the contact form
   # This is set by account settings
