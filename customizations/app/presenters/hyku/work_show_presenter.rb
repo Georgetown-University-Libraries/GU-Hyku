@@ -49,6 +49,10 @@ module Hyku
       @collection_featured
     end
 
+    def page_title
+      "#{title.first} | #{I18n.t('hyrax.product_name')}"
+    end
+
     def user_can_feature_collection?
       current_ability.can?(:create, FeaturedCollection)
     end

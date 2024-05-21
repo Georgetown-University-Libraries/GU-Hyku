@@ -9,6 +9,11 @@ module Hyrax
       number_to_human_size(solr_document.file_size, precision: 2)
     end
 
+    # The title of the webpage that shows this FileSet.
+    def page_title
+      "#{title.first} | #{I18n.t('hyrax.product_name')}"
+    end
+
     def vtt?
       solr_document.vtt?
     end
