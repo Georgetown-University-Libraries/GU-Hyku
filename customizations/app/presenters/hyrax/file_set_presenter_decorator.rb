@@ -25,8 +25,6 @@ module Hyrax
         "#{solr_document.page_count&.first} pages"
       elsif solr_document.width && solr_document.height
         "#{solr_document.width}×#{solr_document.height} pixels"
-      else
-        "--"
       end
     end
 

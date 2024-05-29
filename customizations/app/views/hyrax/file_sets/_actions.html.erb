@@ -1,5 +1,7 @@
 <div class="btn-group">
-  <% if can?(:download, file_set.id) && !(can?(:edit, file_set.id) || can?(:destroy, file_set.id)) %>
+  <% if !can?(:download, file_set.id) %>
+    <span>&hyphen;&hyphen;</span>
+  <% elsif !(can?(:edit, file_set.id) || can?(:destroy, file_set.id)) %>
   <%= link_to t('.download'),
               hyrax.download_path(file_set),
               class: 'btn btn-default btn-sm',

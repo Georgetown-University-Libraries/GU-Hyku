@@ -5,7 +5,7 @@
   <td class="attribute attribute-filename ensure-wrapped"><%= member.link_name %></td>
   <td class="attribute attribute-file_format"><%= member.try(:file_format) %></td>
   <!--<td class="attribute attribute-mime_type"><%# member.try(:mime_type) %></td>-->
-  <td class="attribute attribute-file_size"><%= member.try(:file_size) %>&nbsp;&lpar;<%= member.try(:extent) %>&rpar;</td>
+  <td class="attribute attribute-file_size"><%= member.try(:file_size) %><% if member.extent %>&nbsp;&lpar;<%= member.extent %>&rpar;<% end %></td>
   <!--<td class="attribute attribute-date_uploaded"><%# member.try(:date_uploaded) %></td>-->
   <td class="attribute attribute-permission"><%= member.permission_badge %></td>
   <td>
