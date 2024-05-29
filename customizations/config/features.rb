@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 Flipflop.configure do
-  feature :use_pdf_viewer,
-          default: true,
-          description: "Use embedded PDF viewer instead of displaying thumbnail and action buttons"
+#   feature :use_pdf_viewer,
+#           default: true,
+#           description: "Use embedded PDF viewer instead of displaying thumbnail and action buttons"
   
   feature :show_featured_researcher,
           default: false,

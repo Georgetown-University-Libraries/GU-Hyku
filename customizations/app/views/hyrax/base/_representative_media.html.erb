@@ -2,7 +2,7 @@
   <div class="col-sm-12">
     <%= iiif_viewer_display presenter %>
   </div>
-<% elsif presenter.representative_presenter.pdf? && Flipflop.use_pdf_viewer?%>
+<% elsif presenter.representative_presenter.pdf? #&& Flipflop.use_pdf_viewer?%>
   <div class="col-sm-12">
     <%= render 'pdf_js', file_set_presenter: presenter.file_set_presenters.first %>
   </div>
