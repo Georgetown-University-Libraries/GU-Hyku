@@ -57,10 +57,6 @@ module Hyku
       current_ability.can?(:create, FeaturedCollection)
     end
     # End Featured Collections Methods
-
-    def video_file_set_presenter
-      file_set_presenters.find(&:video?)
-    end
     
     def vtt_file_set_presenters
       file_set_presenters.select(&:vtt?)
