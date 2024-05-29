@@ -1,18 +1,20 @@
-<% if presenter.representative_id.present? && presenter.representative_presenter.present? %>
-  <% if defined?(viewer) && viewer && presenter.iiif_viewer?%>
+<% if presenter.representative_presenter.image? && presenter.iiif_viewer? %>
+  <div class="col-sm-12">
     <%= iiif_viewer_display presenter %>
-  <% elsif presenter.file_set_presenters.any?(&:pdf?) %>
-    <% if Flipflop.use_pdf_viewer? %>
-      <%= render 'pdf_js', file_set_presenter: presenter.file_set_presenters.first %>
-    <% else %>
-      <div class="col-sm-3 text-center">
-        <%= render media_display_partial(presenter.representative_presenter), file_set: presenter.representative_presenter %>
-      </div>
-    <% end %>
-  <% else %>
-    <%= render media_display_partial(presenter.representative_presenter), file_set: presenter.representative_presenter %>
-  <% end %>
+  </div>
+<% elsif presenter.representative_presenter.pdf? && Flipflop.use_pdf_viewer?%>
+  <div class="col-sm-12">
+    <%= render 'pdf_js', file_set_presenter: presenter.file_set_presenters.first %>
+  </div>
+<% elsif @presenter.representative_presenter.video? %>
+  <div class="col-sm-12">
+    <%= render 'video_player', presenter: @presenter %>
+  </div>
 <% else %>
-  <% alt = block_for(name: 'default_work_image_text') || 'Default work thumbnail' %>
-  <%= image_tag default_work_image, class: "canonical-image", alt: alt %>
+  <div class="col-sm-3 text-center">
+    <% alt = block_for(name: 'default_work_image_text') || 'Default work thumbnail' %>
+    <%= image_tag default_work_image, class: "canonical-image", alt: alt %>
+    <%# render 'citations', presenter: @presenter %>
+    <%# render 'social_media' %>
+  </div>
 <% end %>

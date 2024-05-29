@@ -15,24 +15,17 @@
       <div class="panel-body">
         <div class="row">
           <%= render 'workflow_actions_widget', presenter: @presenter %>
-          <% if @presenter.iiif_viewer? || @presenter.file_set_presenters.any?(&:pdf?)%>
-            <div class="col-sm-12">
-              <%= render 'representative_media', presenter: @presenter, viewer: true %>
-            </div>
-            <div class="col-sm-12">
-          <% elsif @presenter.video_file_set_presenter %>
-            <div class="col-sm-12">
-              <%= render 'video_player', presenter: @presenter, viewer: false %>
-            </div>
-            <div class="col-sm-12">
+          <% if @presenter.representative_presenter.present? %>
+            <%= render 'representative_media', presenter: @presenter %>
           <% else %>
             <div class="col-sm-3 text-center">
-              <%= render 'representative_media', presenter: @presenter, viewer: false %>
+              <% alt = block_for(name: 'default_work_image_text') || 'Default work thumbnail' %>
+              <%= image_tag default_work_image, class: "canonical-image", alt: alt %>
               <%# render 'citations', presenter: @presenter %>
               <%# render 'social_media' %>
             </div>
-            <div class="col-sm-9">
           <% end %>
+          <div class="col-sm-12">
             <%= render 'work_description', presenter: @presenter %>
             <%= render 'metadata', presenter: @presenter %>
           </div>
