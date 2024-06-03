@@ -132,6 +132,6 @@ class User < ApplicationRecord
 
     Hyrax::Group.find_or_create_by!(name: Ability.registered_group_name).add_members_by_id(id)
     #Add the user to the GU Depositors group by default
-    Hyrax::Group.find_or_create_by!(name: "gu_depositors").add_members_by_id(id)
+    Hyrax::Group.find_or_create_by!(name: "gu_depositors", humanized_name: "GU Depositors").add_members_by_id(id)
   end
 end
