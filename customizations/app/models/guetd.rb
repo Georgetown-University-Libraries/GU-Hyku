@@ -102,6 +102,11 @@ class Guetd < ActiveFedora::Base
   end
 
   #TODO: Replace repository.libary.georgetown.edu with new DG domain (once live)
+  property :relation_uri, predicate: ::RDF::URI.new("http://repository.library.georgetown.edu/ns#relation_uri") do |index|
+    index.as :stored_searchable
+  end
+
+  #TODO: Replace repository.libary.georgetown.edu with new DG domain (once live)
   property :repository_legacy, predicate: ::RDF::URI.new("http://repository.library.georgetown.edu/ns#repository_legacy") do |index|
     index.as :stored_searchable
   end
