@@ -20,7 +20,7 @@ module Hyrax
 
     def extent
       if solr_document.duration
-        time_to_words(solr_document.duration&.first)
+        time_to_words(solr_document.duration&.first) if solr_document.duration&.first.match(/\d*:\d*:\d*/)
       elsif solr_document.page_count
         "#{solr_document.page_count&.first} pages"
       elsif solr_document.width && solr_document.height
@@ -31,7 +31,7 @@ module Hyrax
     def time_to_words(time_str)
       # Parse time string into hours, minutes, and seconds
       hours, minutes, seconds = time_str.split(':').map(&:to_i)
-    
+      
       components = []
     
       components << "#{hours} hours" if hours > 0
