@@ -1,6 +1,6 @@
 <%# Custom GU-Hyku logic to render ancestor collections if they exist %>
 <% if presenter.ancestor_collections.blank? %>
-  <div class="alert alert-warning" role="alert"><%= t('hyrax.base.relationships.empty', type: presenter.human_readable_type) %></div>
+  <div class="alert alert-info" role="alert"><%= t('hyrax.base.relationships.empty', type: presenter.human_readable_type) %></div>
 <% else %>
   <%= render 'relationships_ancestors_row', type: "collection", presenter: presenter %>
 <% end %>

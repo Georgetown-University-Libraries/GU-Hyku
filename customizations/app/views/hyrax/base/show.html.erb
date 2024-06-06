@@ -16,13 +16,12 @@
         <div class="row">
           <%= render 'workflow_actions_widget', presenter: @presenter %>
           <% if @presenter.representative_presenter.present? %>
-            <%= render 'representative_media', presenter: @presenter %>
+            <div class="col-sm-12">
+              <%= render 'representative_media', presenter: @presenter %>
+            </div>
           <% else %>
-            <div class="col-sm-3 text-center">
-              <% alt = block_for(name: 'default_work_image_text') || 'Default work thumbnail' %>
-              <%= image_tag default_work_image, class: "canonical-image", alt: alt %>
-              <%# render 'citations', presenter: @presenter %>
-              <%# render 'social_media' %>
+            <div class="col-sm-12">
+              <div class="alert alert-info" role="alert"><%= t('hyrax.base.viewer.metadata-only', type: @presenter.human_readable_type) %></div>
             </div>
           <% end %>
           <div class="col-sm-12">

@@ -391,6 +391,12 @@ en:
         google: Google+
         tumblr: Tumblr
         twitter: Twitter
+      viewer: 
+        embargo: This work is embargoed.
+        metadata-only: There are no files attached to this work. 
+        non-standard: There is no preview available for this work. 
+        private: This work is private.
+        institutional: This work is only visible to the Georgetown community; please login to view.
     batch:
       help:
         resource_type: You may select multiple types to apply to all files

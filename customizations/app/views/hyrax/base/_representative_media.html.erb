@@ -1,20 +1,36 @@
-<% if presenter.representative_presenter.image? && presenter.iiif_viewer? %>
-  <div class="col-sm-12">
-    <%= iiif_viewer_display presenter %>
-  </div>
-<% elsif presenter.representative_presenter.pdf? #&& Flipflop.use_pdf_viewer?%>
-  <div class="col-sm-12">
-    <%= render 'pdf_js', file_set_presenter: presenter.file_set_presenters.first %>
-  </div>
-<% elsif @presenter.representative_presenter.video? %>
-  <div class="col-sm-12">
-    <%= render 'video_player', presenter: @presenter %>
-  </div>
+<% if !current_user || !(can?(:edit, presenter.representative_id) || can?(:destroy, presenter.representative_id))%>
+  <% solr_document = presenter.representative_presenter.solr_document %>
+  <% if solr_document["visibility_during_embargo_ssim"]&.first == "authenticated" && !current_user%>
+    <div class="alert alert-info" role="alert"><%= t('hyrax.base.viewer.embargo', type: presenter.human_readable_type) %></div>
+  <% elsif solr_document["visibility_during_embargo_ssim"]&.first == "restricted" && !(can?(:edit, presenter.representative_id) || can?(:destroy, presenter.representative_id))%>
+    <div class="alert alert-info" role="alert"><%= t('hyrax.base.viewer.embargo', type: presenter.human_readable_type) %></div>
+  <% elsif solr_document["visibility_ssi"] == "authenticated" && !current_user%>
+    <div class="alert alert-info" role="alert"><%= t('hyrax.base.viewer.institutional', type: presenter.human_readable_type) %></div>
+  <% elsif solr_document["visibility_ssi"] == "restricted" && !(can?(:edit, presenter.representative_id) || can?(:destroy, presenter.representative_id))%>
+    <div class="alert alert-info" role="alert"><%= t('hyrax.base.viewer.private', type: presenter.human_readable_type) %></div>
+  <% else %>
+    <% if presenter.representative_presenter.image? && presenter.iiif_viewer? %>
+      <%= iiif_viewer_display presenter %>
+    <% elsif presenter.representative_presenter.pdf? #&& Flipflop.use_pdf_viewer?%>
+      <%= render 'pdf_js', file_set_presenter: presenter.file_set_presenters.first %>
+    <% elsif presenter.representative_presenter.video? %>
+      <%= render 'video_player', presenter: @presenter %>
+    <% elsif presenter.representative_presenter.audio? %>
+      <%= render media_display_partial(presenter.representative_presenter), file_set: presenter.representative_presenter %>
+    <% else %>
+      <div class="alert alert-info" role="alert"><%= t('hyrax.base.viewer.non-standard', type: @presenter.human_readable_type) %></div>
+    <% end %>
+  <% end %>  
 <% else %>
-  <div class="col-sm-3 text-center">
-    <% alt = block_for(name: 'default_work_image_text') || 'Default work thumbnail' %>
-    <%= image_tag default_work_image, class: "canonical-image", alt: alt %>
-    <%# render 'citations', presenter: @presenter %>
-    <%# render 'social_media' %>
-  </div>
+  <% if presenter.representative_presenter.image? && presenter.iiif_viewer? %>
+    <%= iiif_viewer_display presenter %>
+  <% elsif presenter.representative_presenter.pdf? #&& Flipflop.use_pdf_viewer?%>
+    <%= render 'pdf_js', file_set_presenter: presenter.file_set_presenters.first %>
+  <% elsif presenter.representative_presenter.video? %>
+    <%= render 'video_player', presenter: @presenter %>
+  <% elsif presenter.representative_presenter.audio? %>
+    <%= render media_display_partial(presenter.representative_presenter), file_set: presenter.representative_presenter %>
+  <% else %>
+    <div class="alert alert-info" role="alert"><%= t('hyrax.base.viewer.non-standard', type: @presenter.human_readable_type) %></div>
+  <% end %>
 <% end %>
