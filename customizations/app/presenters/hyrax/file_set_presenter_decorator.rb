@@ -33,12 +33,18 @@ module Hyrax
       hours, minutes, seconds = time_str.split(':').map(&:to_i)
       
       components = []
+
+      components << "#{hours} hour" if hours == 1
     
-      components << "#{hours} hours" if hours > 0
+      components << "#{hours} hours" if hours > 1
+
+      components << "#{minutes} minute" if minutes == 1
     
-      components << "#{minutes} minutes" if minutes > 0
+      components << "#{minutes} minutes" if minutes > 1
+
+      components << "#{seconds} second" if seconds == 1
     
-      components << "#{seconds} seconds" if seconds > 0
+      components << "#{seconds} seconds" if seconds > 1
     
       result = components.join(', ')
     
