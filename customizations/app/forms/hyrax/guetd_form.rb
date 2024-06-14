@@ -34,7 +34,6 @@ module Hyrax
       :identifier,
       :isbn,
       :keyword,
-      :license,
       :lcc,
       :orcid,
       :provenance,

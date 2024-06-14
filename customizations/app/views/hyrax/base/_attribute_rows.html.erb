@@ -1,18 +1,49 @@
-<%= presenter.attribute_to_html(:date_modified, label: t('hyrax.base.show.last_modified'), html_dl: true) %>
+<%= presenter.attribute_to_html(:title, html_dl: true) %>
+<%= presenter.attribute_to_html(:alternative_title, html_dl: true, label: t('simple_form.labels.defaults.alternative_title')) %>
 <%= presenter.attribute_to_html(:creator, render_as: :faceted, html_dl: true) %>
+<%= presenter.attribute_to_html(:advisor, html_dl: true) %>
+<%= presenter.attribute_to_html(:editor, html_dl: true) %>
 <%= presenter.attribute_to_html(:contributor, render_as: :faceted, html_dl: true) %>
-<%= presenter.attribute_to_html(:subject, render_as: :faceted, html_dl: true) %>
 <%= presenter.attribute_to_html(:publisher, render_as: :faceted, html_dl: true) %>
-<%= presenter.attribute_to_html(:language, render_as: :faceted, html_dl: true) %>
-<%= presenter.attribute_to_html(:identifier, render_as: :linked, search_field: 'identifier_tesim', html_dl: true) %>
+<%= presenter.attribute_to_html(:date, html_dl: true) %>
+<%= presenter.attribute_to_html(:date_created, html_dl: true, label: t('simple_form.labels.defaults.date_created')) %>
+<%= presenter.attribute_to_html(:date_issued, html_dl: true, label: t('simple_form.labels.defaults.date_issued')) %>
+<%= presenter.attribute_to_html(:resource_type, render_as: :faceted, html_dl: true, label: t('simple_form.labels.defaults.resource_type')) %>
+<%= presenter.attribute_to_html(:source, render_as: :faceted, html_dl: true) %>
+<%= presenter.attribute_to_html(:subject, render_as: :faceted, html_dl: true) %>
 <%= presenter.attribute_to_html(:keyword, render_as: :faceted, html_dl: true) %>
-<%= presenter.attribute_to_html(:date_created, render_as: :linked, search_field: 'date_created_tesim', html_dl: true) %>
-<%= presenter.attribute_to_html(:based_near_label, html_dl: true) %>
-<%= presenter.attribute_to_html(:related_url, render_as: :external_link, html_dl: true) %>
-<%= presenter.attribute_to_html(:resource_type, render_as: :faceted, html_dl: true) %>
-<%= presenter.attribute_to_html(:source, html_dl: true) %>
+<%= presenter.attribute_to_html(:permanent_link, render_as: :external_link, html_dl: true, label: t('simple_form.labels.defaults.permanent_link')) %>
+<%= presenter.attribute_to_html(:rights_statement, render_as: :rights_statement, html_dl: true, label: t('simple_form.labels.defaults.rights_statement')) %>
+<%= presenter.attribute_to_html(:rights_notes, html_dl: true, label: t('simple_form.labels.defaults.rights_notes')) %>
+<%= presenter.attribute_to_html(:classification, html_dl: true) %>
+<%= presenter.attribute_to_html(:date_copyrighted, html_dl: true, label: t('simple_form.labels.defaults.date_copyrighted')) %>
+<%= presenter.attribute_to_html(:embargo_lift_date, html_dl: true, label: t('simple_form.labels.defaults.embargo_lift_date')) %>
+<%= presenter.attribute_to_html(:representative_embargo_release_date, html_dl: true, label: t('simple_form.labels.defaults.representative_embargo_release_date')) %>
+<%= presenter.attribute_to_html(:language, html_dl: true) %>
+<%= presenter.attribute_to_html(:identifier, html_dl: true) %>
+<%= presenter.attribute_to_html(:other_identifier, html_dl: true, label: t('simple_form.labels.defaults.other_identifier')) %>
+<%= presenter.attribute_to_html(:lcc, html_dl: true, label: t('simple_form.labels.defaults.lcc')) %>
+<%= presenter.attribute_to_html(:lcsh, html_dl: true, label: t('simple_form.labels.defaults.lcsh')) %>
+<%= presenter.attribute_to_html(:isbn, html_dl: true, label: t('simple_form.labels.defaults.isbn')) %>
+<%= presenter.attribute_to_html(:issn, html_dl: true, label: t('simple_form.labels.defaults.isbn')) %>
+<%= presenter.attribute_to_html(:govdoc, html_dl: true, label: t('simple_form.labels.defaults.govdoc')) %>
+<%= presenter.attribute_to_html(:orcid, render_as: :linked, search_field: 'orcid_tesim', html_dl: true, label: t('simple_form.labels.defaults.orcid')) %>
+<%= presenter.attribute_to_html(:doi, render_as: :linked, search_field: 'doi_tesim', html_dl: true, label: t('simple_form.labels.defaults.doi')) %>
+<%= presenter.attribute_to_html(:relation, html_dl: true, label: t('simple_form.labels.defaults.relation')) %>
+<%= presenter.attribute_to_html(:bibliographic_citation, html_dl: true, label: t('simple_form.labels.defaults.bibliographic_citation')) %>
+<%= presenter.attribute_to_html(:table_of_contents, html_dl: true, label: t('simple_form.labels.defaults.table_of_contents')) %>
+<%= presenter.attribute_to_html(:is_part_of_series, render_as: :linked, search_field: 'is_part_of_series_tesim', html_dl: true, label: t('simple_form.labels.defaults.is_part_of_series')) %>
+<%= presenter.attribute_to_html(:gu_is_part_of, render_as: :linked, search_field: 'gu_is_part_of_tesim', html_dl: true, label: t('simple_form.labels.defaults.gu_is_part_of')) %>
+<%= presenter.attribute_to_html(:provenance, html_dl: true) %>
+<%= presenter.attribute_to_html(:coverage, html_dl: true) %>
+<%= presenter.attribute_to_html(:spatial, html_dl: true, label: t('simple_form.labels.defaults.spatial')) %>
+<%= presenter.attribute_to_html(:temporal, html_dl: true, label: t('simple_form.labels.defaults.temporal')) %>
+<%= presenter.attribute_to_html(:format, html_dl: true) %>
 <%= presenter.attribute_to_html(:extent, html_dl: true) %>
-<%= presenter.attribute_to_html(:rights_statement, render_as: :rights_statement, html_dl: true) %>
-<%= presenter.attribute_to_html(:rights_notes, html_dl: true) %>
-<%= presenter.attribute_to_html(:access_right, html_dl: true) %>
-<%= presenter.attribute_to_html(:license, render_as: :license, html_dl: true) %>
+<%= presenter.attribute_to_html(:medium, html_dl: true, label: t('simple_form.labels.defaults.medium')) %>
+<%= presenter.attribute_to_html(:relation_uri, render_as: :external_link, html_dl: true, label: t('simple_form.labels.defaults.relation_uri')) %>
+
+<%# presenter.attribute_to_html(:based_near_label, html_dl: true) %>
+<%# presenter.attribute_to_html(:related_url, render_as: :external_link, html_dl: true) %>
+<%# presenter.attribute_to_html(:access_right, html_dl: true) %>
+<%# presenter.attribute_to_html(:license, render_as: :license, html_dl: true) %>

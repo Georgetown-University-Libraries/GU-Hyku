@@ -7,7 +7,10 @@ module Hyku
     Hyrax::MemberPresenterFactory.file_presenter_class = Hyrax::FileSetPresenter
 
 
-    delegate :title_or_label, :extent, to: :solr_document
+    delegate :advisor, :coverage, :classification, :date, :date_copyrighted, :date_issued, 
+             :doi, :editor, :embargo_lift_date, :extent, :govdoc, :gu_is_part_of, :handle, 
+             :is_part_of_series, :isbn, :issn, :lcc, :medium, :orcid, :provenance, :relation, :relation_uri, 
+             :spatial, :table_of_contents, :temporal, :title_or_label, to: :solr_document
 
     # OVERRIDE Hyrax v2.9.0 here to make featured collections work
     delegate :collection_presenters, to: :member_presenter_factory
@@ -51,6 +54,15 @@ module Hyku
 
     def page_title
       "#{title.first} | #{I18n.t('hyrax.product_name')}"
+    end
+
+    def permanent_link
+      "#{ENV.fetch('HANDLE_DOMAIN', 'hdl.handle.net')}/#{ENV.fetch('HANDLE_PREFIX', '10822')}/#{solr_document.handle}"
+    end 
+
+    #In GU-Hyku, the embargo release date for a work's representative media is effectively the work's embargo release date
+    def representative_embargo_release_date
+      representative_presenter.solr_document["embargo_release_date_dtsi"]&.to_date&.strftime("%Y-%m-%d") unless !representative_presenter
     end
 
     def user_can_feature_collection?

@@ -14,10 +14,6 @@ class GuScholar < ActiveFedora::Base
     index.as :stored_searchable, :facetable
   end
 
-  property :bibliographic_citation, predicate: ::RDF::Vocab::DC.bibliographicCitation do |index|
-    index.as :stored_searchable
-  end
-
   property :coverage, predicate: ::RDF::Vocab::DC11.coverage do |index|
     index.as :stored_searchable
   end

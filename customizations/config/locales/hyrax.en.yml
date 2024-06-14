@@ -1231,8 +1231,10 @@ en:
         member_of_collection_ids: Add to collection
         orcid: ORCID
         other_identifier: Other Identifier
+        permanent_link: Permanent Link
         related_url: Related URL
         relation_uri: Streaming Media Link
+        representative_embargo_release_date: Embargo Release Date
         repository_legacy: Repository Legacy
         resource_type: Resource Type
         rights_statement: Rights Statement
