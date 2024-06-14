@@ -716,6 +716,7 @@ en:
           title: Title
           type: Type
           visibility: Visibility
+          work_type: Work Type
         highlighted: My Highlights
         shared: Works Shared with Me
         sr:

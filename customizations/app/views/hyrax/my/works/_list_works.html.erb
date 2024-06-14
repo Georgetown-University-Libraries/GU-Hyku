@@ -31,6 +31,7 @@
       </div>
     </div>
   </td>
+  <td class='text-center'><%= document["human_readable_type_tesim"].first %></td>
   <td class="date text-center"><%= document.date_modified %></td>
   <td class='text-center'>
     <span class="fa <%= current_user.trophies.where(work_id: document.id).exists? ? 'fa-star highlighted-work' : 'fa-star-o trophy-off' %>" aria-hidden="true"></span></td>
