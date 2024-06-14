@@ -8,8 +8,10 @@
           <dd><%= doc_presenter.field_value field %></dd>
       <% end %>
     <% end %>
-    <dt><%= t('simple_form.labels.defaults.permanent_link') %></dt>
-    <dd><%= link_to(document.permanent_link, "https://" + document.permanent_link) %></dd>
+    <% unless document.collection? %>
+      <dt><%= t('simple_form.labels.defaults.permanent_link') %></dt>
+      <dd><%= link_to(document.permanent_link, "https://" + document.permanent_link) %></dd>
+    <% end %>
     </dl>
   </div>
 </div>
