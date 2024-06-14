@@ -88,4 +88,8 @@ class SolrDocument
   def language_code
     self['language_codes_ssi']
   end
+
+  def permanent_link
+    "#{ENV.fetch('HANDLE_DOMAIN', 'hdl.handle.net')}/#{ENV.fetch('HANDLE_PREFIX', '10822')}/#{handle}"
+  end
 end
