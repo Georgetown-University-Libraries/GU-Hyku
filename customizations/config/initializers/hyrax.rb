@@ -16,8 +16,7 @@ Hyrax.config do |config|
 
   # Email recipient of messages sent via the contact form
   # This is set by account settings
-  # config.contact_email = 'changeme@example.com'
-  config.contact_email = 'digitalscholarship@georgetown.edu' 
+  config.contact_email = 'changeme@example.com'
 
   # Text prefacing the subject entered in the contact form
   # config.subject_prefix = "Contact form:"
