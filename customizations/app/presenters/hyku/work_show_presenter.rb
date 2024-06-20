@@ -61,6 +61,11 @@ module Hyku
       representative_presenter.solr_document["embargo_release_date_dtsi"]&.to_date&.strftime("%Y-%m-%d") unless !representative_presenter
     end
 
+    # remove locale url option
+    def stats_path
+      Hyrax::Engine.routes.url_helpers.stats_work_path(self)
+    end
+
     def user_can_feature_collection?
       current_ability.can?(:create, FeaturedCollection)
     end
@@ -111,4 +116,3 @@ module Hyku
       end
   end
 end
-
