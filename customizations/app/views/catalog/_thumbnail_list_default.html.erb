@@ -1,10 +1,3 @@
-<%# model = document.hydra_model %>
 <div class="col-md-2">
-  <%# if model == Hyrax::PcdmCollection || model < Hyrax::PcdmCollection %>
-    <%= render_thumbnail_tag document, {}, suppress_link: true %>
-  <%# else %>
-    <!--<div class="list-thumbnail">
-      <%# render_thumbnail_tag document %>
-    </div>-->
-  <%# end %>
+  <%= render_thumbnail_tag document, {role: "presentation"}, suppress_link: true %>
 </div>
