@@ -6,8 +6,8 @@ module Hyrax
 
       def li_value(value)
         value.match(/http/) ? url = value : url = "https://" + value
-        link = link_to(value, url) 
-        "#{link}&nbsp;<span class='glyphicon glyphicon-new-window'></span>"
+        link_to(value, url) 
+        #"#{link}&nbsp;<span class='glyphicon glyphicon-new-window'></span>"
       end
     end
   end
