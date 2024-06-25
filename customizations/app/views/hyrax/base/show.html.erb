@@ -19,6 +19,8 @@
             <div class="col-sm-12">
               <%= render 'representative_media', presenter: @presenter %>
             </div>
+          <% elsif @presenter.has_sharestream_link? %>
+              <%= render 'sharestream', presenter: @presenter %>
           <% else %>
             <div class="col-sm-12">
               <div class="alert alert-info" role="alert"><%= t('hyrax.base.viewer.metadata-only', type: @presenter.human_readable_type) %></div>
