@@ -1,5 +1,9 @@
-<iframe src="<%= @presenter.solr_document["relation_uri_tesim"]&.first %>"
-  id="sharestream-player" allow="autoplay; fullscreen" allowfullscreen="true" 
-  frameborder="0"
-  title="ShareStream video viewer for <%= @presenter.title&.first %>">
-</iframe>
+<% if @presenter.solr_document["relation_uri_tesim"]&.first.match?(/auth/) && !current_user %>
+  <div class="alert alert-info" role="alert"><%= t('hyrax.base.viewer.institutional', type: presenter.human_readable_type) %></div>
+<% else %>
+  <iframe src="<%= @presenter.sharestream_link %>"
+    id="sharestream-player" allow="autoplay; fullscreen" allowfullscreen="true" 
+    frameborder="0"
+    title="ShareStream video viewer for <%= @presenter.title&.first %>">
+  </iframe>
+<% end %>
