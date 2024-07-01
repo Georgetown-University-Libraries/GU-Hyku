@@ -90,6 +90,13 @@ module Hyrax
         { filename: filename, relative_path: relative_path, alt_text: alttext }
       end
     end
+    
+    def collection_type_badge
+      if collection_type.title == "User Collection" 
+        collection_type.title = "Collection"
+      end 
+      tag.span(collection_type.title, class: "label", style: "background-color: " + collection_type.badge_color + ";")
+    end
 
     # Begin Featured Collections Methods
     def collection_featurable?
