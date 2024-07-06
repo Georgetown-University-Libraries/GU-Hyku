@@ -396,7 +396,7 @@ en:
         metadata-only: There are no files attached to this work. 
         non-standard: There is no preview available for this work. 
         private: This work is private.
-        institutional: This work is only visible to the Georgetown community; please login to view.
+        institutional: This work is only visible to the Georgetown community; please login to access.
     batch:
       help:
         resource_type: You may select multiple types to apply to all files
@@ -469,11 +469,11 @@ en:
         update: Save changes
     collection_type:
       admin_set_title: Admin Set
-      default_title: User Collection
+      default_title: Collection
     collection_types:
       create_service:
         admin_set_description: An aggregation of works that is intended to help with administrative control. Admin Sets provide a way of defining behaviors and policies around a set of works.
-        default_description: A User Collection can be created by any user to organize their works.
+        default_description: A Collection can be created by any user to organize their works.
     collections:
       search_form:
         button_label: Go
