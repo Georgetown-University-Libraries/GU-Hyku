@@ -39,7 +39,6 @@ module Hyrax
       :provenance,
       :relation,
       :relation_uri,
-      :repository_legacy,
       :rights_notes,  
       :spatial,
       :subject,
