@@ -8,8 +8,8 @@ module Hyku
 
 
     delegate :advisor, :coverage, :classification, :date, :date_copyrighted, :date_issued, 
-             :doi, :editor, :embargo_lift_date, :extent, :govdoc, :gu_is_part_of, :handle, 
-             :is_part_of_series, :isbn, :issn, :lcc, :medium, :orcid, :permanent_link, :provenance, :relation, :relation_uri, 
+             :doi, :editor, :embargo_lift_date, :extent, :format, :govdoc, :gu_is_part_of, :handle, 
+             :is_part_of_series, :isbn, :issn, :lcc, :lcsh, :medium, :orcid, :permanent_link, :provenance, :relation, :relation_uri, 
              :spatial, :table_of_contents, :temporal, :title_or_label, to: :solr_document
 
     # OVERRIDE Hyrax v2.9.0 here to make featured collections work
