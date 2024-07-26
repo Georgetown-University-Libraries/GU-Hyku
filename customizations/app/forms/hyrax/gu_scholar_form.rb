@@ -8,7 +8,6 @@ module Hyrax
       :title,
       :creator,
       :date_created,
-      :department,
       :language,
       :resource_type,
       :rights_statement

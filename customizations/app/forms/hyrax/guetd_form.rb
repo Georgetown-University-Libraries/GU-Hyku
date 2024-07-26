@@ -10,7 +10,6 @@ module Hyrax
       :abstract,
       :advisor,
       :date_created,
-      :department,
       :description,
       :language,
       :resource_type,
